@@ -65,3 +65,67 @@ export type SortingAlgorithmsData = {
  * Each animation consists of a pair of a number array and a boolean value.
  */
 export type AnimationArrayType = [number[], boolean][];
+
+/**
+ * Represents the context type for the sorting algorithm.
+ */
+export interface SortingAlgorithmContextType {
+  /**
+   * The array to be sorted.
+   */
+  arrayToSort: number[];
+
+  /**
+   * The selected sorting algorithm.
+   */
+  selectedAlgorithm: SortingAlgorithmType;
+
+  /**
+   * Indicates whether the sorting is in progress.
+   */
+  isSorting: boolean;
+
+  /**
+   * Sets the selected sorting algorithm.
+   * @param algorithm - The sorting algorithm to be set.
+   */
+  setSelectedAlgorithm: (algorithm: SortingAlgorithmType) => void;
+
+  /**
+   * Sets the sorting status.
+   * @param isSorting - The sorting status to be set.
+   */
+  setIsSorting: (isSorting: boolean) => void;
+
+  /**
+   * The animation speed for the sorting visualization.
+   */
+  animationSpeed: number;
+
+  /**
+   * Sets the animation speed.
+   * @param speed - The animation speed to be set.
+   */
+  setAnimationSpeed: (speed: number) => void;
+
+  /**
+   * Resets the array and animation.
+   */
+  resetArrayAndAnimation: () => void;
+
+  /**
+   * Runs the animation for the sorting visualization.
+   * @param animations - The array of animations to be run.
+   */
+  runAnimation: (animations: AnimationArrayType) => void;
+
+  /**
+   * Indicates whether the animation is complete.
+   */
+  isAnimationComplete: boolean;
+
+  /**
+   * Indicates whether a reset is required.
+   */
+  requiresReset: boolean;
+}
