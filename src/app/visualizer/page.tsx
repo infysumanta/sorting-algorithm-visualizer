@@ -1,9 +1,12 @@
 import VisualzerComponent from "@/components/visualizer";
+import { Suspense } from "react";
 
 export default function VisualizerPage() {
   return (
     <>
-      <VisualzerComponent />
+      <Suspense fallback={<div>Loading...</div>}>
+        <VisualzerComponent />
+      </Suspense>
     </>
   );
 }
