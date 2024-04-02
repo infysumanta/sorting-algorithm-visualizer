@@ -4,7 +4,7 @@ import { Suspense } from "react";
 export default function VisualizerPage() {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense>
         <VisualzerComponent />
       </Suspense>
     </>
