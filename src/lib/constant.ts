@@ -8,6 +8,7 @@ export const sortingAlgorithmsData: SortingAlgorithmsData = {
     worstCase: "O(n²)",
     averageCase: "O(n²)",
     bestCase: "O(n)",
+    key: "bubble",
   },
   insertion: {
     title: "Insertion Sort",
@@ -16,6 +17,7 @@ export const sortingAlgorithmsData: SortingAlgorithmsData = {
     worstCase: "O(n²)",
     averageCase: "O(n²)",
     bestCase: "O(n)",
+    key: "insertion",
   },
   selection: {
     title: "Selection Sort",
@@ -24,6 +26,7 @@ export const sortingAlgorithmsData: SortingAlgorithmsData = {
     worstCase: "O(n²)",
     averageCase: "O(n²)",
     bestCase: "O(n²)",
+    key: "selection",
   },
   merge: {
     title: "Merge Sort",
@@ -32,6 +35,7 @@ export const sortingAlgorithmsData: SortingAlgorithmsData = {
     worstCase: "O(n log n)",
     averageCase: "O(n log n)",
     bestCase: "O(n log n)",
+    key: "merge",
   },
   quick: {
     title: "Quick Sort",
@@ -40,5 +44,6 @@ export const sortingAlgorithmsData: SortingAlgorithmsData = {
     worstCase: "O(n²)",
     averageCase: "O(n log n)",
     bestCase: "O(n log n)",
+    key: "quick",
   },
 };

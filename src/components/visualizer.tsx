@@ -7,6 +7,7 @@ import { generateAnimationArray } from "@/lib/algo";
 import { sortingAlgorithmsData } from "@/lib/constant";
 import { SortingAlgorithmType } from "@/lib/types";
 import { algorithmOptions } from "@/lib/utils";
+import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -54,9 +55,12 @@ export default function VisualzerComponent() {
           <div className="h-[66px] relative flex items-center justify-between w-full bg-gradient-to-b from-indigo-950 via-purple-750 to-indigo-950 shadow-lg">
             <div className="container m-auto">
               <header className="flex items-center justify-between w-full ">
-                <h1 className="text-gray-300 text-2xl font-semibold hidden md:flex">
+                <Link
+                  className="text-gray-300 text-2xl font-semibold hidden md:flex"
+                  href={"/"}
+                >
                   Sorting Visulizer
-                </h1>
+                </Link>
                 <div className="flex items-center justify-center gap-4 ">
                   <SliderComponent
                     isDisabled={isSorting}
@@ -93,7 +97,7 @@ export default function VisualzerComponent() {
                       {sortingAlgorithmsData[selectedAlgorithm]?.title}
                     </h3>
                     <p className="text-sm text-grey-500 pt-2">
-                      {sortingAlgorithmsData[selectedAlgorithm].description}
+                      {sortingAlgorithmsData[selectedAlgorithm]?.description}
                     </p>
                   </div>
 
@@ -103,19 +107,22 @@ export default function VisualzerComponent() {
                       <p className="flex w-full text-sm text-gray-200">
                         <span className="w-28">Worst Case:</span>
                         <span>
-                          {sortingAlgorithmsData[selectedAlgorithm].worstCase}
+                          {sortingAlgorithmsData[selectedAlgorithm]?.worstCase}
                         </span>
                       </p>
                       <p className="flex w-full text-sm text-gray-200">
                         <span className="w-28">Average Case:</span>
                         <span>
-                          {sortingAlgorithmsData[selectedAlgorithm].averageCase}
+                          {
+                            sortingAlgorithmsData[selectedAlgorithm]
+                              ?.averageCase
+                          }
                         </span>
                       </p>
                       <p className="flex w-full text-sm text-gray-200">
                         <span className="w-28">Best Case:</span>
                         <span>
-                          {sortingAlgorithmsData[selectedAlgorithm].bestCase}
+                          {sortingAlgorithmsData[selectedAlgorithm]?.bestCase}
                         </span>
                       </p>
                     </div>

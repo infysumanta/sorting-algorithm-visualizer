@@ -51,6 +51,11 @@ export type AlgorithmInfo = {
    * The best-case time complexity of the algorithm.
    */
   bestCase: string;
+
+  /**
+   * The key of the algorithm.
+   */
+  key: string;
 };
 
 /**
