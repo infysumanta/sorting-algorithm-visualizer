@@ -9,6 +9,7 @@ import {
   MAX_ANIMATION_SPEED,
   generateRandomNumberFromInterval,
 } from "@/lib/utils";
+import { useSearchParams } from "next/navigation";
 import React, { ReactNode, createContext, useEffect, useState } from "react";
 
 export const SortingAlgorithmContext = createContext<
@@ -16,9 +17,12 @@ export const SortingAlgorithmContext = createContext<
 >(undefined);
 
 export const SortingProvider = ({ children }: { children: ReactNode }) => {
+  const searchParams = useSearchParams();
+  const algorithm = searchParams.get("algorithm");
+
   const [arrayToSort, setArrayToSort] = useState<number[]>([]);
   const [selectedAlgorithm, setSelectedAlgorithm] =
-    useState<SortingAlgorithmType>("bubble");
+    useState<SortingAlgorithmType>(algorithm as SortingAlgorithmType);
   const [isSorting, setIsSorting] = useState<boolean>(false);
   const [isAnimationComplete, setIsAnimationComplete] =
     useState<boolean>(false);
